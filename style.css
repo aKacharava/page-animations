@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+@font-face{
+    font-family: SansitaSwashedReg;
+    src: url(fonts/static/SansitaSwashed-Regular.ttf);
+}
+@font-face{
+    font-family: SansitaSwashedLight;
+    src: url(fonts/static/SansitaSwashed-Light.ttf);
+}
+
+body{
+    font-family: SansitaSwashedReg;
+}
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, #420254, #2c014a);
+    z-index: -1;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    min-height: 10vh;
+    color: white;
+    align-items: center;
+}
+#logo{
+    grid-column: 2/3;
+    font-size: 24px;
+}
+.hamburger-menu-icon{
+    justify-self: end;
+    fill: white;
+}
+
+section{
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+}
+.hero{
+    height: 60%;
+    width: 100%;
+    position: relative;
+}
+.hero img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero::after{
+    content: "";
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.2;
+}
+
+.headline{
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    font-size: 60px;
+    transform: translate(-20%, -70%);
+    color: white;
+    z-index: 3;
+    font-family: SansitaSwashedLight;
+}
+
+@media (max-width: 1024px){
+    .headline {
+        left: 25%;
+        font-size: 40px;
+    }
+}
